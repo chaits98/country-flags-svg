@@ -4,7 +4,7 @@ function createUrl(svgUrl) {
 
 module.exports = {
 	'ABW': createUrl('commons/f/f6/Flag_of_Aruba.svg'),
-	'AFG': createUrl('commons/9/9a/Flag_of_Afghanistan.svg'),
+	'AFG': createUrl('commons/c/cd/Flag_of_Afghanistan_(2013%E2%80%932021).svg'),
 	'AGO': createUrl('commons/9/9d/Flag_of_Angola.svg'),
 	'AIA': createUrl('commons/b/b4/Flag_of_Anguilla.svg'),
 	'ALA': createUrl('commons/5/52/Flag_of_%C3%85land.svg'),
@@ -14,6 +14,7 @@ module.exports = {
 	'ARE': createUrl('commons/c/cb/Flag_of_the_United_Arab_Emirates.svg'),
 	'ARG': createUrl('commons/1/1a/Flag_of_Argentina.svg'),
 	'ARM': createUrl('commons/2/2f/Flag_of_Armenia.svg'),
+	'ASC': 'https://en.wikipedia.org/wiki/Flag_of_Ascension_Island#/media/File:Flag_of_Ascension_Island.svg',
 	'ASM': createUrl('commons/8/87/Flag_of_American_Samoa.svg'),
 	'ATG': createUrl('commons/8/89/Flag_of_Antigua_and_Barbuda.svg'),
 	'AUS': createUrl('commons/8/88/Flag_of_Australia_(converted).svg'),
@@ -105,6 +106,7 @@ module.exports = {
 	'IDN': createUrl('commons/9/9f/Flag_of_Indonesia.svg'),
 	'IMN': createUrl('commons/b/bc/Flag_of_the_Isle_of_Man.svg'),
 	'IND': createUrl('commons/4/41/Flag_of_India.svg'),
+	'IOT': 'https://en.wikipedia.org/wiki/British_Indian_Ocean_Territory#/media/File:Flag_of_the_Commissioner_of_the_British_Indian_Ocean_Territory.svg',
 	'IRL': createUrl('commons/c/c0/Republic_of_Ireland_Flag.svg'),
 	'IRN': createUrl('commons/c/ca/Flag_of_Iran.svg'),
 	'IRQ': createUrl('commons/f/f6/Flag_of_Iraq.svg'),
@@ -215,6 +217,7 @@ module.exports = {
 	'SYC': createUrl('commons/f/fc/Flag_of_Seychelles.svg'),
 	'SYR': createUrl('commons/5/53/Flag_of_Syria.svg'),
 	'TCA': createUrl('commons/a/a0/Flag_of_the_Turks_and_Caicos_Islands.svg'),
+	'TAA': 'https://en.wikipedia.org/wiki/Tristan_da_Cunha#/media/File:Flag_of_Tristan_da_Cunha.svg',
 	'TCD': createUrl('commons/4/4b/Flag_of_Chad.svg'),
 	'TGO': createUrl('commons/6/68/Flag_of_Togo.svg'),
 	'THA': createUrl('commons/a/a9/Flag_of_Thailand.svg'),
