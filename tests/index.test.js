@@ -6,6 +6,9 @@ const {
 	findFlagUrlByNationality,
 	findFlagUrlByIso2Code,
 	findFlagUrlByIso3Code,
+	findCountryNameByIso2Code,
+	findCountryNameByIso3Code,
+	fetchAllCountries,
 } = require("../src/index");
 
 describe("countryFlagsSvg", () => {
@@ -134,6 +137,60 @@ describe("api", () => {
 			expect(findFlagUrlByIso3Code("111")).toBe("");
 			expect(findFlagUrlByIso3Code("")).toBe("");
 			expect(findFlagUrlByIso3Code("aassdd")).toBe("");
+		});
+	});
+
+	describe("findCountryNameByIso2Code", () => {
+		describe("should return correct country name for Australia", () => {
+			it("when argument in uppercase", () => {
+				const countryInfo = findCountryNameByIso2Code("AU");
+
+				expect(countryInfo).toBe("Australia");
+			});
+
+			it("when argument in lowercase", () => {
+				const countryInfo = findCountryNameByIso2Code("au");
+
+				expect(countryInfo).toBe("Australia");
+			});
+		});
+
+		it("should return empty string for incorrect arg", () => {
+			expect(findCountryNameByIso2Code("111")).toBe("");
+			expect(findCountryNameByIso2Code("")).toBe("");
+			expect(findCountryNameByIso2Code("aassdd")).toBe("");
+		});
+	});
+
+	describe("findCountryNameByIso3Code", () => {
+		describe("should return correct country name for Australia", () => {
+			it("when argument in uppercase", () => {
+				const countryInfo = findCountryNameByIso3Code("AUS");
+
+				expect(countryInfo).toBe("Australia");
+			});
+
+			it("when argument in lowercase", () => {
+				const countryInfo = findCountryNameByIso3Code("aus");
+
+				expect(countryInfo).toBe("Australia");
+			});
+		});
+
+		it("should return empty string for incorrect arg", () => {
+			expect(findCountryNameByIso3Code("111")).toBe("");
+			expect(findCountryNameByIso3Code("")).toBe("");
+			expect(findCountryNameByIso3Code("aassdd")).toBe("");
+		});
+	});
+
+	describe("fetchAllCountries", () => {
+		describe("should return all countries list", () => {
+			it("all countries should be returned", () => {
+				const countryInfo = fetchAllCountries();
+
+				expect(countryInfo).toBe(countries);
+			});
 		});
 	});
 });
