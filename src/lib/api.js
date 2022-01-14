@@ -16,6 +16,12 @@ function findCountryNameByPredicate(countries, predicate) {
 	return country ? country.name : "";
 }
 
+function findCountryByPredicate(countries, predicate) {
+	const country = countries.find(predicate);
+
+	return country;
+}
+
 module.exports = {
 	findFlagUrlByCountryName(countryName) {
 		return findFlagUrlByPredicate(countries, ({name, altSpellings}) =>
@@ -40,6 +46,14 @@ module.exports = {
 
 	findCountryNameByIso3Code(iso3Code) {
 		return findCountryNameByPredicate(countries, ({ iso3 }) => isEqual(iso3, iso3Code));
+	},
+
+	findCountryByIso2Code(iso2Code) {
+		return findCountryByPredicate(countries, ({ iso2 }) => isEqual(iso2, iso2Code));
+	},
+
+	findCountryByIso3Code(iso3Code) {
+		return findCountryByPredicate(countries, ({ iso3 }) => isEqual(iso3, iso3Code));
 	},
 
 	fetchAllCountries() {

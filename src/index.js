@@ -7,6 +7,8 @@ const {
 	findFlagUrlByIso3Code,
 	findCountryNameByIso2Code,
 	findCountryNameByIso3Code,
+	findCountryByIso2Code,
+	findCountryByIso3Code,
 	fetchAllCountries
 } = require("./lib/api");
 
@@ -19,5 +21,7 @@ module.exports = {
 	findFlagUrlByIso3Code,
 	findCountryNameByIso2Code,
 	findCountryNameByIso3Code,
+	findCountryByIso2Code,
+	findCountryByIso3Code,
 	fetchAllCountries
 };

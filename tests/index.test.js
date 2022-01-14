@@ -8,6 +8,8 @@ const {
 	findFlagUrlByIso3Code,
 	findCountryNameByIso2Code,
 	findCountryNameByIso3Code,
+	findCountryByIso2Code,
+	findCountryByIso3Code,
 	fetchAllCountries,
 } = require("../src/index");
 
@@ -181,6 +183,78 @@ describe("api", () => {
 			expect(findCountryNameByIso3Code("111")).toBe("");
 			expect(findCountryNameByIso3Code("")).toBe("");
 			expect(findCountryNameByIso3Code("aassdd")).toBe("");
+		});
+	});
+
+	describe("findCountryByIso2Code", () => {
+		describe("should return correct country object for Australia", () => {
+			it("when argument in uppercase", () => {
+				const countryInfo = findCountryByIso2Code("AU");
+
+				expect(countryInfo).toEqual({
+					name: "Australia",
+					demonym: "Australian",
+					flag: "https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Australia_(converted).svg",
+					iso2: "AU",
+					iso3: "AUS",
+					altSpellings: [],
+				});
+			});
+
+			it("when argument in lowercase", () => {
+				const countryInfo = findCountryByIso2Code("au");
+
+				expect(countryInfo).toEqual({
+					name: "Australia",
+					demonym: "Australian",
+					flag: "https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Australia_(converted).svg",
+					iso2: "AU",
+					iso3: "AUS",
+					altSpellings: [],
+				});
+			});
+		});
+
+		it("should return undefined for incorrect arg", () => {
+			expect(findCountryByIso2Code("111")).toBe(undefined);
+			expect(findCountryByIso2Code("")).toBe(undefined);
+			expect(findCountryByIso2Code("aassdd")).toBe(undefined);
+		});
+	});
+
+	describe("findCountryByIso3Code", () => {
+		describe("should return correct country object for Australia", () => {
+			it("when argument in uppercase", () => {
+				const countryInfo = findCountryByIso3Code("AUS");
+
+				expect(countryInfo).toEqual({
+					name: "Australia",
+					demonym: "Australian",
+					flag: "https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Australia_(converted).svg",
+					iso2: "AU",
+					iso3: "AUS",
+					altSpellings: [],
+				});
+			});
+
+			it("when argument in lowercase", () => {
+				const countryInfo = findCountryByIso3Code("aus");
+
+				expect(countryInfo).toEqual({
+					name: "Australia",
+					demonym: "Australian",
+					flag: "https://upload.wikimedia.org/wikipedia/commons/8/88/Flag_of_Australia_(converted).svg",
+					iso2: "AU",
+					iso3: "AUS",
+					altSpellings: [],
+				});
+			});
+		});
+
+		it("should return undefined for incorrect arg", () => {
+			expect(findCountryByIso3Code("111")).toBe(undefined);
+			expect(findCountryByIso3Code("")).toBe(undefined);
+			expect(findCountryByIso3Code("aassdd")).toBe(undefined);
 		});
 	});
 
