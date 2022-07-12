@@ -1,4 +1,4 @@
-const {
+import {
 	ABW,
 	AFG,
 	AGO,
@@ -248,7 +248,7 @@ const {
 	ZAF,
 	ZMB,
 	ZWE,
-} = require("./Svgs");
+} from "./Svgs";
 
 module.exports = {
 	ABW: ABW,
