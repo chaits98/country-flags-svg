@@ -10,12 +10,6 @@ function findFlagUrlByPredicate(countries, predicate) {
 	return country ? country.flag : "";
 }
 
-function findFlagSvgByPredicate(countries, predicate) {
-	const country = countries.find(predicate);
-
-	return country ? country.flagSvg : "";
-}
-
 function findCountryNameByPredicate(countries, predicate) {
 	const country = countries.find(predicate);
 
@@ -44,23 +38,6 @@ module.exports = {
 
 	findFlagUrlByIso3Code(iso3Code) {
 		return findFlagUrlByPredicate(countries, ({ iso3 }) => isEqual(iso3, iso3Code));
-	},
-
-	findFlagSvgByCountryName(countryName) {
-		return findFlagSvgByPredicate(countries, ({name, altSpellings}) =>
-			isEqual(name, countryName) || altSpellings.some(altSpelling => isEqual(altSpelling, countryName)));
-	},
-
-	findFlagSvgByNationality(nationality) {
-		return findFlagSvgByPredicate(countries, ({ demonym }) => isEqual(demonym, nationality));
-	},
-
-	findFlagSvgByIso2Code(iso2Code) {
-		return findFlagSvgByPredicate(countries, ({ iso2 }) => isEqual(iso2, iso2Code));
-	},
-
-	findFlagSvgByIso3Code(iso3Code) {
-		return findFlagSvgByPredicate(countries, ({ iso3 }) => isEqual(iso3, iso3Code));
 	},
 
 	findCountryNameByIso2Code(iso2Code) {
