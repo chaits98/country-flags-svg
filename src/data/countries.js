@@ -1,10 +1,12 @@
 const flagUrlByIso3 = require("./flagUrlByIso3");
+const flagSvgByIso3 = require("./flagSvgByIso3");
 
 class CountryData {
 	constructor(name, demonym, iso2, iso3, altSpellings = []) {
 		this.name = name;
 		this.demonym = demonym;
 		this.flag = flagUrlByIso3[iso3];
+		this.flagSvg = flagSvgByIso3[iso3];
 		this.iso2 = iso2;
 		this.iso3 = iso3;
 		this.altSpellings = altSpellings;
